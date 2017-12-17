@@ -1,0 +1,176 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <style>
+  blockquote{
+    margin: 10px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid green; /* Just change the color value and that's it*/
+  }
+</style>
+</head>
+
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="">
+        </div>
+        <a href="#!user"><img class="circle" src="http://wpidiots.com/html/writic/red-writic-template/css/img/demo-images/avatar1.jpg"></a>
+        <a href="#!name"><span class="black-text name">John Doe</span></a>
+        <a href="#!email"><span class="black-text email">jdandturk@gmail.com</span></a>
+      </div>
+    </li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons cyan-text text-darken2">insert_chart</i>Grafik Analisis</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons  green-text">add_circle</i>Tambah Pemasukan</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons red-text">remove_circle</i>Tambah Pengeluaran</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons teal-text text-darken2">view_list</i>Data keuangan</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons brown-text">help</i>Help</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Support Us</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons light-green-text">monetization_on</i>Donate Now</a></li>
+  </ul>
+
+
+
+  <div class="wrapper">
+    <nav>
+      <div class="nav-wrapper green lighten-1">
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons ">menu</i></a>
+        <a href="#" class="brand-logo right">Baby.co<i class="money material-icons">attach_money</i></a>
+      </div>
+    </nav>
+
+    <!-- Page Layout here -->
+    <div class=" container">
+
+     <div class="row"> 
+      <div class="col s12 m10 offset-m1">
+        <div class="col s12 m4 offset-m4">
+          <h2 class="green-text"> Progress</h2>
+        </div> 
+
+        
+      </div>
+
+    </div> 
+
+    <div class="row">
+      <div class="col s12 m10 offset-m1"> 
+
+        <div class="col m1"> 
+          <i class="large material-icons">check_circle</i>
+        </div> 
+
+        <div class="col m1 offset-m4"> 
+          <i class="large material-icons">local_shipping</i>
+        </div> 
+
+
+        <div class="col m1 offset-m4"> 
+          <i class="large material-icons">home</i>
+        </div>    
+
+        <div class="col m12">
+          <div class="progress">
+            <div class="determinate" style="width: 50%"></div>
+          </div> 
+
+        </div>
+      </div>
+
+
+      
+    </div> 
+
+
+  </div>
+
+
+
+
+
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
+<script>
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var cth = document.getElementById("myChart2").getContext('2d');
+  var cty = document.getElementById("lineChart").getContext('2d');
+  var myChart = new Chart(cty, {
+    type: 'line',
+    data: {
+      labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      datasets: [{
+        label: 'pengeluaran',
+        data: [12, 19, 3, 17, 6, 3, 7],
+        backgroundColor: "rgba(234, 102, 102,0.8)"
+      }, {
+        label: 'pemasukan',
+        data: [2, 29, 5, 5, 2, 3, 10],
+        backgroundColor: "rgba(183, 234, 102,0.8)"
+      }]
+    }
+  });
+  // For a pie chart
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["M", "T", "W", "T", "F", "S", "S"],
+      datasets: [{
+        backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+        ],
+        data: [12, 19, 3, 17, 28, 24, 7]
+      }]
+    }
+  });
+  var myPieChart = new Chart(cth, {
+    type: 'pie',
+    data: {
+      labels: ["M", "T", "W", "T", "F", "S", "S"],
+      datasets: [{
+        backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+        ],
+        data: [12, 19, 3, 17, 28, 24, 7]
+      }]
+    }
+  });
+</script>
+<script type="text/javascript">
+  // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+</script>
+
+</html>
